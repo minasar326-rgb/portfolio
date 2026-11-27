@@ -89,8 +89,8 @@ footer a{color:var(--em);text-decoration:none}
     proj.sort(function(a,b){return a.z-b.z});
     for(var i=0;i<proj.length;i++){
       var p=proj[i], a=Math.max(0,Math.min(1,(p.s-0.55)*1.5));
-      ctx.beginPath(); ctx.arc(p.x,p.y,1.3*p.s*devicePixelRatio,0,6.283);
-      ctx.fillStyle='rgba(56,232,166,'+(0.10+a*0.55)+')'; ctx.fill();
+      ctx.beginPath(); ctx.arc(p.x,p.y,1.7*p.s*devicePixelRatio,0,6.283);
+      ctx.fillStyle='rgba(56,232,166,'+(0.16+a*0.72)+')'; ctx.fill();
     }
     ctx.lineWidth=devicePixelRatio*0.6;
     for(var i=0;i<proj.length;i+=2){
