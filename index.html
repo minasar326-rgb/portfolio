@@ -161,11 +161,11 @@
   .mini .shot::after{background:linear-gradient(180deg,rgba(7,9,12,0) 62%,rgba(7,9,12,.5))}
 
   /* ---------- about ---------- */
-  .about{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1.05fr) minmax(0,.9fr);gap:clamp(24px,3.4vw,42px);align-items:start}
+  .about{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1.05fr) minmax(0,.9fr);gap:clamp(24px,3.4vw,42px);align-items:start}
   .portrait{margin:0;position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--surface);align-self:start;
     box-shadow:0 30px 70px -46px rgba(0,0,0,.95);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .3s}
   .portrait:hover{transform:translateY(-4px);border-color:rgba(47,227,160,.35)}
-  .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%}
+  .portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 50%}
   .portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 15px 14px;background:linear-gradient(180deg,rgba(6,9,12,0),rgba(6,9,12,.86) 55%);font-size:12.8px;color:#dbe6f2;line-height:1.45}
   .portrait figcaption b{display:block;font-size:14px;color:#fff;font-weight:600}
   @media(max-width:1000px){.about{grid-template-columns:1fr}.portrait{max-width:300px}}
