@@ -268,6 +268,7 @@
 
 
   /* ---------- intro / entry ---------- */
+  html.intro-lock{overflow:hidden}
   #intro{position:fixed;inset:0;z-index:200;background:
       radial-gradient(40rem 30rem at 50% 45%,rgba(47,227,160,.10),transparent 65%),
       radial-gradient(30rem 24rem at 70% 70%,rgba(124,108,255,.12),transparent 65%),
@@ -965,13 +966,15 @@
 (function(){
   var el=document.getElementById('intro');
   if(!el) return;
+  document.documentElement.classList.add('intro-lock');
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var seen=false;
   try{ seen=sessionStorage.getItem('ms-intro')==='1'; }catch(e){}
-  if(reduce || seen){ el.remove(); document.body.classList.add('intro-done'); return; }
+  if(reduce || seen){ el.remove(); document.documentElement.classList.remove('intro-lock'); document.body.classList.add('intro-done'); return; }
   var finished=false;
   function finish(){
     if(finished) return; finished=true;
+    document.documentElement.classList.remove('intro-lock');
     document.body.classList.add('intro-done');
     el.classList.add('done');
     try{ sessionStorage.setItem('ms-intro','1'); }catch(e){}
